@@ -1,6 +1,6 @@
 ---
 name: bryntum-scheduler-pro
-description: Implements, customizes, debugs, and tests Bryntum Scheduler Pro integrations, including its scheduling engine, project stores, assignments, calendars, dependencies, editors, and persistence. Use specifically for Scheduler Pro work, including Vue/TypeScript integrations; not generic scheduling algorithms or ordinary Bryntum Scheduler tasks.
+description: Implements, configures, debugs, and tests Bryntum Scheduler Pro integrations. Discovers built-in options before custom code and audits conflicting settings across inherited APIs, features, project data, and wrappers. Use for Scheduler Pro, including Vue/TypeScript; not generic scheduling algorithms or ordinary Scheduler tasks.
 ---
 
 # Bryntum Scheduler Pro
@@ -16,6 +16,14 @@ Use the installed package's types, matching official documentation, and version-
 Keep core, framework wrapper, themes, and any thin-package dependencies compatible. Do not mix full bundles from different Bryntum products or independently upgrade wrappers. Check the documented multi-product packaging strategy when applicable. Preserve the user's licensed/trial package choice and configured registry; do not copy credentials into code or add licensed distribution files to the repository.
 
 Source: [Scheduler Pro documentation](https://bryntum.com/products/schedulerpro/docs/).
+
+## Discover configuration before custom code
+
+Before implementing or changing Scheduler Pro behavior, follow [configuration discovery and interaction checks](resources/configuration-discovery.md). Search by the desired outcome, including inherited configs, feature options, project/model settings, and wrapper mappings. Read defaults, prerequisites, exclusions, and runtime restrictions for each serious candidate.
+
+Prefer an existing supported configuration or feature when it satisfies the requirement. Before introducing a custom listener, renderer, subclass, DOM workaround, or scheduling calculation, explain the native options considered and the specific remaining gap. An unsuccessful keyword search alone is not evidence that no option exists.
+
+For configuration changes, audit the effective values and their origins, including defaults, config spreads, wrapper props, saved state, and runtime assignments. Check related options together and verify behavior after initialization and subsequent updates. Record documented conflicts separately from suspected application interactions; do not claim the audit covers every possible option combination.
 
 ## Choose the relevant workflow
 
